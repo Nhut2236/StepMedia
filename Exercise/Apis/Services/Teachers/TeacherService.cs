@@ -1,5 +1,7 @@
 using AutoMapper;
+using Exercise.Apis.Models;
 using Exercise.Commons;
+using Exercise.Exceptions;
 
 namespace Exercise.Apis.Services.Teachers
 {
@@ -12,12 +14,20 @@ namespace Exercise.Apis.Services.Teachers
             _merger = new Merger(mapper.ConfigurationProvider);
         }
 
-        public TeacherOrderServiceResponse Order(TeacherOrderServiceRequest teacherOrderServiceRequest)
+        public Task<TeacherOrderServiceResponse> OrderTeachersAndStudents(TeacherOrderServiceRequest teacherOrderServiceRequest)
         {
-            TeacherOrderServiceResponse teacherOrderServiceResponse = new TeacherOrderServiceResponse(teacherOrderServiceRequest);
+            TeacherOrderServiceResponse teacherOrderServiceResponse =
+                new TeacherOrderServiceResponse(teacherOrderServiceRequest);
             try
             {
+                // validate
+                Validation(teacherOrderServiceResponse);
+
+                if (teacherOrderServiceResponse.HasErrors())
+                    return Task.FromResult(teacherOrderServiceResponse);
+
                 List<TeacherOrderServiceFields> teachers = teacherOrderServiceRequest.Fields;
+
                 teachers = teachers
                     .OrderBy(_ =>
                     {
@@ -34,7 +44,22 @@ namespace Exercise.Apis.Services.Teachers
                 teacherOrderServiceResponse.AddException(ex);
             }
 
-            return teacherOrderServiceResponse;
+            return Task.FromResult(teacherOrderServiceResponse);
+        }
+
+        private void Validation(TeacherOrderServiceResponse teacherOrderServiceResponse)
+        {
+            var teachers = teacherOrderServiceResponse.Fields;
+
+            var students = teachers.SelectMany(_ => _.Students).ToList();
+
+            if (teachers.Count < 2)
+                teacherOrderServiceResponse.AddException(new FailedValidationException("Teachers",
+                    "Invalid array length !!!"));
+
+            if (students.Count < 30)
+                teacherOrderServiceResponse.AddException(new FailedValidationException(nameof(TeacherModel.Students),
+                    "Invalid array length !!!"));
         }
     }
 }

@@ -21,14 +21,14 @@ namespace Exercise.Apis.Controllers
         }
         
         [HttpPost]
-        public Task<ActionResult> Order([FromBody] List<TeacherOrderParams> teacherOrderParamsList)
+        public async Task<ActionResult> Order([FromBody] List<TeacherOrderParams> teacherOrderParamsList)
         {
             List<TeacherOrderServiceFields> teacherOrderServiceFieldsList = _mapper.Map<List<TeacherOrderServiceFields>>(teacherOrderParamsList);
             TeacherOrderServiceRequest teacherOrderServiceRequest = new TeacherOrderServiceRequest(teacherOrderServiceFieldsList);
             TeacherOrderServiceResponse teacherOrderServiceResponse =
-                _teacherService.Order(teacherOrderServiceRequest);
+                await _teacherService.OrderTeachersAndStudents(teacherOrderServiceRequest);
             
-            return Task.FromResult(StepMediaCollection(teacherOrderServiceResponse));
+            return StepMediaCollection(teacherOrderServiceResponse);
         }
     }
 }
