@@ -1,26 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "E:\\StepMedia\\UnitTest\\UnitTest.csproj": {}
+    "D:\\Nhut\\StepMedia\\UnitTest\\UnitTest.csproj": {}
   },
   "projects": {
-    "E:\\StepMedia\\Exercise\\Exercise.csproj": {
+    "D:\\Nhut\\StepMedia\\Exercise\\Exercise.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\StepMedia\\Exercise\\Exercise.csproj",
+        "projectUniqueName": "D:\\Nhut\\StepMedia\\Exercise\\Exercise.csproj",
         "projectName": "Exercise",
-        "projectPath": "E:\\StepMedia\\Exercise\\Exercise.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "E:\\StepMedia\\Exercise\\obj\\",
+        "projectPath": "D:\\Nhut\\StepMedia\\Exercise\\Exercise.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Nhut\\StepMedia\\Exercise\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/redhat-dotnet/api/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -90,30 +96,36 @@
         }
       }
     },
-    "E:\\StepMedia\\UnitTest\\UnitTest.csproj": {
+    "D:\\Nhut\\StepMedia\\UnitTest\\UnitTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\StepMedia\\UnitTest\\UnitTest.csproj",
+        "projectUniqueName": "D:\\Nhut\\StepMedia\\UnitTest\\UnitTest.csproj",
         "projectName": "UnitTest",
-        "projectPath": "E:\\StepMedia\\UnitTest\\UnitTest.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "E:\\StepMedia\\UnitTest\\obj\\",
+        "projectPath": "D:\\Nhut\\StepMedia\\UnitTest\\UnitTest.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Nhut\\StepMedia\\UnitTest\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/redhat-dotnet/api/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\StepMedia\\Exercise\\Exercise.csproj": {
-                "projectPath": "E:\\StepMedia\\Exercise\\Exercise.csproj"
+              "D:\\Nhut\\StepMedia\\Exercise\\Exercise.csproj": {
+                "projectPath": "D:\\Nhut\\StepMedia\\Exercise\\Exercise.csproj"
               }
             }
           }

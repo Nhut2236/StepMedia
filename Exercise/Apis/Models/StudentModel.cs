@@ -6,6 +6,7 @@ namespace Exercise.Apis.Models
     {
         [Required]
         public DateTime DateOfBirth { get; set; }
+        public int Age => DateTime.UtcNow.Year - DateOfBirth.Year;
     }
 }
 

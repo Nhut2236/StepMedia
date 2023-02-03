@@ -6,14 +6,19 @@ namespace UnitTest
     public class ExerciseTest
     {
         private readonly ITestService _testService;
-        
+
+        public static IEnumerable<object[]> AdminDevicesFetchActionTestData()
+        {
+            
+        }
+
         public ExerciseTest(ITestService testService)
         {
             _testService = testService;
         }
         
         [Theory]
-        [MemberData(nameof(DataForTest.OrderData.TemplateOne), MemberType = typeof(object))]
+        [ClassData(typeof(TestOrderServiceFields))]
         public void TestOrder(List<TestOrderServiceFields> teachers)
         {
             TestOrderServiceResponse testOrderServiceResponse = _testService.OrderTeachersAndStudents(
