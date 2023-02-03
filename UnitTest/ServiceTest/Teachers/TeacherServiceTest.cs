@@ -1,3 +1,4 @@
+using AutoMapper;
 using Exercise.Apis.Services.Teachers;
 using Exercise.Commons;
 using Moq;
@@ -10,12 +11,14 @@ namespace UnitTest.ServiceTest.Teachers
     {
         #region  Setup
 
-        private readonly ITeacherService  _teacherService;
+        private readonly TeacherService  _teacherService;
         private readonly Mock<Merger> _mergerMock;
+        private readonly Mock<IMapper> _mapperMock;
 
         public TeacherServiceTest()
         {
-            _mergerMock = new Mock<Merger>();
+            _mapperMock = new Mock<IMapper>();
+            _mergerMock = new Mock<Merger>(_mapperMock.Object.ConfigurationProvider);
             _teacherService = new TeacherService(_mergerMock.Object);
         }
 
