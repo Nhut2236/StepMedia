@@ -2,7 +2,7 @@
 
 namespace Exercise.Apis.Controllers.Params
 {
-    public class TestOrderParams : TeacherModel
+    public class TeacherOrderParams : TeacherModel
     {
     }
 }

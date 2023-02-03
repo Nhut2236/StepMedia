@@ -1,4 +1,4 @@
-using Exercise.Apis.Services.Tests;
+using Exercise.Apis.Services.Teachers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -31,7 +31,7 @@ namespace Exercise.Configurations
 
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
-            services.AddTransient<ITestService, TestService>();
+            services.AddTransient<ITeacherService, TeacherService>();
             
             return services;
         }

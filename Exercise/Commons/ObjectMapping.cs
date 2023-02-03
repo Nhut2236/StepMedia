@@ -1,6 +1,6 @@
 using AutoMapper;
 using Exercise.Apis.Controllers.Params;
-using Exercise.Apis.Services.Tests;
+using Exercise.Apis.Services.Teachers;
 
 namespace Exercise.Commons
 {
@@ -8,12 +8,12 @@ namespace Exercise.Commons
     {
         public ObjectMapping()
         {
-            TestMapping();
+            TeacherMapping();
         }
 
-        private void TestMapping()
+        private void TeacherMapping()
         {
-            CreateMap<TestOrderParams, TestOrderServiceFields>();
+            CreateMap<TeacherOrderParams, TeacherOrderServiceFields>();
         }
     }
 }
