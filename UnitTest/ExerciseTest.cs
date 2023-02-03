@@ -7,11 +7,6 @@ namespace UnitTest
     {
         private readonly ITestService _testService;
 
-        public static IEnumerable<object[]> AdminDevicesFetchActionTestData()
-        {
-            
-        }
-
         public ExerciseTest(ITestService testService)
         {
             _testService = testService;
